@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+  
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  background: #000000;
+  color: #101010;
+}
+
+h1 {
+  color: #fff;
+  margin: 2rem 4rem;
+}
+
+h2 {
+  color: #000;
+  margin: 0rem 4rem;
+  text-align: center;
+}
+
+h4 {
+  margin: 2rem 0;
+}
+
+.text {
+  color: #fff;
+  margin: 2rem 4rem;
+}
+
+/*-----header-----*/
+
+header {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 80px;
+  background-color: #000;
+}
+  
+.container {
+  height: 80px;
+}
+  
+.navbar{
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 3.1rem;
+}
+  
+.logo-nav {
+  width: 108px;
+  margin: 0 5.8rem -2.5rem 0;
+}
+  
+.burger {
+  display: none;
+  width: 30px;
+  height: 20px;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+  
+.line {
+  width: 100%;
+  height: 3px;
+  background-color: #ffffff; /* Barva čar */
+  transition: all 0.3s ease;
+}
+  
+.content-nav {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+  
+.content-nav li {
+  display: inline-block;
+}
+  
+.content-nav li a {
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+  padding: 1rem 1.3rem;
+}
+
+.content-nav li a::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  transform-origin: left;
+  transform: scale(0, 1);
+  transition: transform ease-in-out 0.5s;
+}
+    
+.content-nav li a:hover::after {
+  transform: scale(1, 1);
+}
+  
+#logo-img {
+  margin-top: 40px;
+  width: 100%;
+}
+
+#arrow-container {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+  
+#arrow {
+  width: 50px;
+  fill: #fff;
+  animation: bounce 2s infinite;
+}
+  
+@keyframes bounce {
+  0%, 100% {
+  transform: translateY(0);
+  }
+  50% {
+  transform: translateY(-20px);
+  }
+}
+  
+/*-----start - responsive header-----*/
+@media screen and (max-width: 125rem){
+.container {
+  width: 100%;
+  }
+}
+
+@media screen and (max-width: 62.5rem){ 
+
+.container {
+  width: 100%;
+  height: 50px;
+  }
+
+.logo-nav {
+  width: 60px;
+  margin: -5px;
+  }
+    
+#logo-img {
+  margin-top: 100px;
+  width: 100%;
+  }
+
+#arrow {
+  display: none;
+  } 
+
+.burger {
+  width: 30px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 2;
+  }
+
+.burger.open .line:nth-child(2) {
+  opacity: 0;
+  }
+  
+.burger.open .line:first-child {
+  transform: translateY(8 px) rotate(45deg);
+  }
+  
+.burger.open .line:last-child {
+  transform: translateY(-9px) rotate(-45deg);
+  }  
+
+.content-nav {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  z-index: 1;
+  transition: opacity 0.3s ease;
+  }
+
+.display {
+  display: flex;
+}
+
+.content-nav li {
+  display:block;
+  background-color: #000;
+  padding: 15px;
+  }
+
+
+
+  .text {
+    margin: 2rem 2rem;
+  }
+}
+
+
+@media screen and (max-width: 56.25rem){ 
+  .logo-nav {
+    width: 52px;
+    margin: 0 0;
+  }
+
+}
+/*end - responsive header*/
+
+
+/*-----footer-----*/
+
+footer {
+  background-color: #fff;
+  padding: 2rem 4rem;
+}
+
+.footer-content {
+  margin: 0;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 100px;
+
+}
+
+.content-social, .content-name, .content-map {
+  flex-grow: 0; /* Sloupce se nebudou roztahovat */
+  list-style-type: none;
+  padding: 0;
+}
+
+.fixed-width {
+  width: 300px; /* Pevná šířka pro první a třetí sloupec */
+}
+
+.flexible-width {
+  flex-grow: 1; /* Sloupec 2 se bude roztahovat */
+  flex-basis: 0; /* Výchozí šířka pro Sloupec 2 */
+}
+
+.content-social li a, .content-social li, .content-name li, .content-name li a, .content-map a{
+  color: #000;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+  
+.content-social li img {
+  margin-right: 10px;
+}
+  
+.content-social li span {
+  flex-grow: 1;
+}  
+
+.img-social {
+  width: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.web {
+  text-align: center;
+  margin-top: 50px;
+}
+
+/*-----start - responsive footer-----*/
+@media screen and (max-width: 62.5rem){ 
+  footer {
+    padding: 2rem 0rem;
+  }
+
+  .footer-content {
+    flex-basis: 100%; /* Sloupce se roztažením vyplní celou šířku */
+    margin: 0rem 2rem;
+    flex-basis: 100%; /* Sloupce se roztažením vyplní celou šířku */
+    width: auto; /* Zrušení pevné šířky pro první a třetí sloupec */
+    gap: 60px;
+  }
+}
+
+
+
+
+@media screen and (max-width: 56.25rem){
+  footer {
+    background-color: #fff;
+    padding: 2rem 0rem;
+  }
+
+  .footer-content {
+    margin: 0rem 2rem;
+    gap: 40px;
+  }
+}
+/*-----end - responsive footer-----*/
+
+/*E-SHOP.HTML*/
+.shop {
+  background-color: #fff;
+  padding-top: 120px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.shop-items {
+  width: 80vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Počet sloupců (v tomto případě 3) */
+  grid-gap: 50px; /* Volitelná mezera mezi obrázky */
+  justify-items: center;
+}
+
+.shop h1 {
+  color: #000;
+  margin: 2rem 4rem;
+}
+
+.image-link {
+  display: inline-block;
+  position: relative;
+  transition: transform 0.3s;
+}
+  
+.image-link img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s;
+}
+  
+.image-link:hover {
+  transform: scale(1.1);
+}
+  
+.image-link:hover img {
+  transform: scale(1.1);
+}
+  
+/*-----start - responsive e-shop-----*/
+@media screen and (max-width: 56.25rem){
+.shop h1 {
+  text-align: center;
+  }
+
+.shop-items {
+  display: grid;
+  grid-template-columns: 1fr; /* Výchozí hodnota: jedna položka na řádek */
+  grid-gap: 50px; /* Volitelná mezera mezi obrázky */
+  justify-items: center;
+  }
+}
+  
