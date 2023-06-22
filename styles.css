@@ -248,22 +248,26 @@ footer {
   flex-direction: row;
   flex-wrap: wrap;
   gap: 100px;
+  justify-content: space-between;
 
 }
 
-.content-social, .content-name, .content-map {
-  flex-grow: 0; /* Sloupce se nebudou roztahovat */
+.logo-footer {
+  width: 200px;
+}
+
+.content-social, .content-name, .content-map, .content-logo {
   list-style-type: none;
   padding: 0;
 }
 
-.fixed-width {
-  width: 300px; /* Pevná šířka pro první a třetí sloupec */
+.content-logo {
+  align-self: center;
+  margin: 0 auto;
 }
 
-.flexible-width {
-  flex-grow: 1; /* Sloupec 2 se bude roztahovat */
-  flex-basis: 0; /* Výchozí šířka pro Sloupec 2 */
+.content-map {
+  width: 200px;
 }
 
 .content-social li a, .content-social li, .content-name li, .content-name li a, .content-map a{
@@ -276,11 +280,7 @@ footer {
   
 .content-social li img {
   margin-right: 10px;
-}
-  
-.content-social li span {
-  flex-grow: 1;
-}  
+} 
 
 .img-social {
   width: 1.5rem;
@@ -289,7 +289,13 @@ footer {
 
 .web {
   text-align: center;
+  font-size: 0.9rem;
   margin-top: 50px;
+}
+
+.web a {
+  text-decoration: none;
+  color: #000;
 }
 
 /*-----start - responsive footer-----*/
