@@ -217,7 +217,10 @@ header {
   padding: 15px;
   }
 
-
+h1 {
+    color: #fff;
+    margin: 1rem 2rem;
+  }
 
   .text {
     margin: 2rem 2rem;
