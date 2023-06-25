@@ -186,7 +186,7 @@ header {
   }
   
 .burger.open .line:first-child {
-  transform: translateY(8 px) rotate(45deg);
+  transform: translateY(8px) rotate(45deg);
   }
   
 .burger.open .line:last-child {
